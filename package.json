@@ -1,0 +1,9 @@
+{
+  "name": "test-releases",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:miszo/test-releases.git",
+  "author": "Miszo Radomski <miszo.radomski@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
