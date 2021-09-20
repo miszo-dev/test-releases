@@ -7,6 +7,7 @@ module.exports = {
         releaseRules: [
           { type: 'docs', release: false },
           { scope: 'no-release', release: false },
+          { scope: 'release', release: false },
           { type: 'chore', release: 'patch' },
           { type: 'fix', release: 'patch' },
           { type: 'refactor', release: 'patch' },
@@ -41,7 +42,6 @@ module.exports = {
         npmPublish: false,
       },
     ],
-    '@semantic-release/github',
     [
       '@semantic-release/git',
       {
@@ -49,6 +49,7 @@ module.exports = {
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
+    '@semantic-release/github',
   ],
   preset: 'angular',
   debug: true,
