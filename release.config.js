@@ -18,7 +18,23 @@ module.exports = {
         ],
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        presetConfig: {
+          types: [
+            { type: 'feat', section: 'Features' },
+            { type: 'fix', section: 'Bug Fixes' },
+            { type: 'refactor', section: 'Refactor' },
+            { type: 'test', section: 'Tests' },
+            { type: 'docs', section: 'Documentation' },
+            { type: 'perf', section: 'Performance' },
+            { type: 'style', section: 'Styles' },
+            { type: 'chore', section: 'Chores' },
+          ],
+        },
+      },
+    ],
     '@semantic-release/github',
     '@semantic-release/git',
   ],
