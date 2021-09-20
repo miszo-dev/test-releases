@@ -1,0 +1,23 @@
+name: Create PR to develop
+on:
+  release:
+    types: [released]
+jobs:
+  create-pr:
+    name: Create PR to develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: develop
+          branch: main
+          title: "chore: after release PR [skip ci]"
+          body: Automatic Pull Request created after the production release
+          committer: ${{ secrets.BOT_NAME }} <${{ secrets.BOT_EMAIL }}>
+          author: ${{ secrets.BOT_NAME }} <${{ secrets.BOT_EMAIL }}>
+          labels: ready for review
+          delete-branch: false
+          token: ${{ secrets.BOT_TOKEN }}
