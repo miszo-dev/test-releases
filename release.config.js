@@ -1,7 +1,5 @@
 module.exports = {
-  release: {
-    branches: ['main', { name: 'release-candidate', prerelease: true }],
-  },
+  branches: ['main', { name: 'release-candidate', prerelease: true }],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
@@ -9,4 +7,5 @@ module.exports = {
     '@semantic-release/git',
   ],
   preset: 'angular',
+  debug: true,
 };
