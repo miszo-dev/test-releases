@@ -35,8 +35,19 @@ module.exports = {
         },
       },
     ],
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
     '@semantic-release/github',
-    '@semantic-release/git',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'package-lock.json'],
+      },
+    ],
   ],
   preset: 'angular',
   debug: true,
