@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "(is-ci && echo 'Skipping prepare on CI server') || husky install"
+    "prepare": "(is-ci && echo 'Skipping prepare on CI server') || husky install",
+    "release": "semantic-release"
   },
   "dependencies": {
     "next": "11.1.2",
