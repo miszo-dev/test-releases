@@ -7,6 +7,10 @@ jobs:
     name: Create PR to develop
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
       - name: Create Pull Request
         run: |
           gh pr create --base develop --head main --title "chore: align develop after release [skip ci]" --body "Automatic Pull Request created after the production release" --label "ready for review"
