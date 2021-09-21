@@ -1,4 +1,6 @@
 const releaseRules = [
+  { breaking: true, release: 'major' },
+  { revert: true, release: 'patch' },
   { scope: 'no-release', release: false },
   { scope: 'release', release: false },
   { type: 'build', release: 'patch' },
