@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
+      - name: Auth in GitHub with token
+        run: gh auth login --with-token ${{ secrets.BOT_TOKEN }}
       - name: Create Pull Request
         run: |
           gh pr create --base develop --head main --title "chore: align develop after release [skip ci]" --body "Automatic Pull Request created after the production release" --label "ready for review"
-        env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
